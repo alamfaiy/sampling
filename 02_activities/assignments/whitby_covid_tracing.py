@@ -67,8 +67,11 @@ def simulate_event(m):
 
   return p_wedding_infections, p_wedding_traces
 
+# Set seed for reproducibility
+np.random.seed(36) 
+
 # Run the simulation 1000 times
-results = [simulate_event(m) for m in range(1000)]
+results = [simulate_event(m) for m in range(100)] # Modified to 100 from 1000
 props_df = pd.DataFrame(results, columns=["Infections", "Traces"])
 
 # Plotting the results
